@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - منصة البكلوريا</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                لوحة التحكم
+            </a>
+            <ul class="nav-menu">
+                <li><a href="../index.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="#add-material"><i class="fas fa-plus"></i> إضافة مادة</a></li>
+                <li><a href="#add-summary"><i class="fas fa-file-pdf"></i> إضافة ملخص</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="admin-section">
+        <div class="admin-container">
+            <h1 class="admin-title"><i class="fas fa-cog"></i> لوحة التحكم</h1>
+            
+            <div id="messageContainer"></div>
+            
+            <!-- نموذج إضافة مادة -->
+            <section id="add-material">
+                <h2>إضافة مادة جديدة</h2>
+                <form id="materialForm">
+                    <div class="form-group">
+                        <label for="materialTitle">عنوان المادة</label>
+                        <input type="text" id="materialTitle" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="materialSubject">المادة الدراسية</label>
+                        <select id="materialSubject" class="form-control" required>
+                            <option value="">اختر المادة</option>
+                            <option value="رياضيات">رياضيات</option>
+                            <option value="فيزياء">فيزياء</option>
+                            <option value="علوم">علوم</option>
+                            <option value="لغة عربية">لغة عربية</option>
+                            <option value="لغة فرنسية">لغة فرنسية</option>
+                            <option value="فلسفة">فلسفة</option>
+                            <option value="تاريخ وجغرافيا">تاريخ وجغرافيا</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="materialDesc">الوصف</label>
+                        <textarea id="materialDesc" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="materialFile">رابط الملف</label>
+                        <input type="url" id="materialFile" class="form-control" placeholder="https://example.com/file.pdf" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="materialImage">رابط الصورة (اختياري)</label>
+                        <input type="url" id="materialImage" class="form-control" placeholder="https://example.com/image.jpg">
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btn">
+                            <i class="fas fa-save"></i> حفظ المادة
+                        </button>
+                        <button type="reset" class="btn" style="background: #666;">
+                            <i class="fas fa-redo"></i> مسح النموذج
+                        </button>
+                    </div>
+                </form>
+            </section>
+            
+            <hr style="margin: 3rem 0;">
+            
+            <!-- نموذج إضافة ملخص -->
+            <section id="add-summary">
+                <h2>إضافة ملخص جديد</h2>
+                <form id="summaryForm">
+                    <div class="form-group">
+                        <label for="summaryTitle">عنوان الملخص</label>
+                        <input type="text" id="summaryTitle" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="summarySubject">المادة الدراسية</label>
+                        <select id="summarySubject" class="form-control" required>
+                            <option value="">اختر المادة</option>
+                            <option value="رياضيات">رياضيات</option>
+                            <option value="فيزياء">فيزياء</option>
+                            <option value="علوم">علوم</option>
+                            <option value="لغة عربية">لغة عربية</option>
+                            <option value="لغة فرنسية">لغة فرنسية</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="summaryGrade">الصف</label>
+                        <select id="summaryGrade" class="form-control" required>
+                            <option value="">اختر الصف</option>
+                            <option value="سنة أولى ثانوي">سنة أولى ثانوي</option>
+                            <option value="سنة ثانية ثانوي">سنة ثانية ثانوي</option>
+                            <option value="سنة ثالثة ثانوي">سنة ثالثة ثانوي</option>
+                            <option value="بكالوريا">بكالوريا</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="summaryDesc">الوصف</label>
+                        <textarea id="summaryDesc" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="summaryPdf">رابط ملف PDF</label>
+                        <input type="url" id="summaryPdf" class="form-control" placeholder="https://example.com/summary.pdf" required>
+                    </div>
+                    
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-secondary">
+                            <i class="fas fa-file-pdf"></i> حفظ الملخص
+                        </button>
+                        <button type="reset" class="btn" style="background: #666;">
+                            مسح النموذج
+                        </button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../js/supabase.js"></script>
+    <script src="admin.js"></script>
+</body>
+  </html>
